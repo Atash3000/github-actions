@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  node-app:
+    image: my-node-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
